@@ -1,6 +1,6 @@
-a = int(input("Введите а: "))
-b = int(input("Введите b: "))
+a = int(input())
+b = int(input())
 
 hipot = (a ** 2 + b ** 2) ** 0.5
 
-print(f"Гипотенуза равна {hipot}")
+print(hipot)
