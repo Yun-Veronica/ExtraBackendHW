@@ -38,39 +38,39 @@ while user_input != "7":
 
         a = input("Input a: ")
         b = input("Input b: ")
+        if not a.isalpha() and not b.isalpha():
+            if "." in a or '.' in b or ',' in a or ',' in b:
+                a = float(a)
+                b = float(b)
+            else:
+                a = int(a)
+                b = int(b)
+            user_input = int(user_input)
 
-        if "." in a or '.' in b or ',' in a or ',' in b:
-            a = float(a)
-            b = float(b)
+            if user_input == 1:
+                result = summing(a, b)
+
+            elif user_input == 2:
+                result = extract(a, b)
+
+            elif user_input == 3:
+                result = product(a, b)
+
+            elif user_input == 4:
+                result = division(a, b)
+
+            elif user_input == 5:
+                result = power(a, b)
+
+            elif user_input == 6:
+                result = root(a, b)
+
+            else:
+                break
+
+            print(f"Result of calculations is : {result}\n")
         else:
-            a = int(a)
-            b = int(b)
-
-        user_input = int(user_input)
-
-        if user_input == 1:
-            result = summing(a, b)
-
-        elif user_input == 2:
-            result = extract(a, b)
-
-        elif user_input == 3:
-            result = product(a, b)
-
-        elif user_input == 4:
-            result = division(a, b)
-
-        elif user_input == 5:
-            result = power(a, b)
-
-        elif user_input == 6:
-            result = root(a, b)
-
-        else:
-            break
-
-        print(f"Result of calculations is : {result}\n")
-
+            print("Error: Invalid input. Try again and input either integer or decimal ")
     elif user_input.isdigit() and (1 > int(user_input) or int(user_input) > 7) or not user_input.isdigit():
         print("Error: Invalid option. Try again and input integer between 1  and 7 ")
 
